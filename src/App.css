@@ -1,0 +1,312 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+/* *************************************************** APP ****************************************************************************************************************************** */
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(22, 22, 22);
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* *************************************************** CALENDAR ****************************************************************************************************************************** */
+.calendar {
+  width: 85rem;
+  height: 42rem;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 5px 10px 5px #000000;
+}
+
+.month {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6b0f1a;
+  background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+
+
+  padding: 0 1rem;
+  text-align: center;
+  text-shadow: 2px 1px 5px #000000;
+  ;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+}
+
+.date h1 {
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
+.date p {
+  font-size: 2.2rem;
+  font-weight: bolder;
+}
+
+.prev,
+.next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 23px;
+  background-color: rgba(0, 0, 0, 0.1);
+  transition: all 0.4s;
+}
+.prev:hover,
+ .next:hover {
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.2);
+}
+
+
+.weekdays {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  height: 4rem;
+}
+
+.weekdays div {
+  font-size: 1.3rem;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.days {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+.days div {
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  margin: 0.1rem;
+  text-shadow: 1px 2px 3px #202020;
+  ;
+  transition: background-color .2s;
+  border-radius: 5%;
+  font-size: 2rem;
+}
+
+
+
+.days div:hover:not(.today) {
+  background-color: rgb(8, 8, 8);
+  border: .1rem solid beige;
+}
+
+.prev-date,
+.next-date {
+  opacity: .3;
+}
+
+.today {
+  background-color: #6b0f1a;
+  background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+}
+
+.today:hover {
+  background: linear-gradient(209.6deg, rgba(48, 207, 208, 1) 11.2%, rgba(51, 8, 103, 1) 92.5%);
+}
+
+#month{
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+/* *************************************************** POPUP BOX *****************************************************************************************************************/
+
+.popup-box {
+  position: fixed;
+  background: #00000071;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  min-height: 85vh;
+  margin-top: calc(100vh - 85vh - 20px);
+  background: linear-gradient(120deg, #21628a, #881b90);
+  border-radius: 4px;
+  padding: 20px;
+  overflow: auto;
+}
+.close-icon {
+  position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 2px 3px #202020;
+    padding: .3rem 1rem;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.156);
+  transition: all 0.4s;
+}
+
+.close-icon:hover{
+  color: tomato;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.326);
+}
+
+.box h2{
+  min-height: 10vh;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 15vh;
+}
+
+header h2{
+  color: black;
+  margin-top: 1rem;
+}
+/* *************************************************** FORM ****************************************************************************************************************************** */
+
+.form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 700px) {
+  form input {
+      width: 15rem;
+  }
+}
+
+.form {
+  width: 100%;
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.form .task-input::placeholder {
+  font-size: 1.5rem;
+  text-align: center;
+}
+.form .task-input {
+  max-width: 40rem;
+}
+.form .task-input:focus {
+  outline: none;
+}
+
+.form .task-input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  box-shadow: 10px 10px 10px #000000;
+  ;
+}
+
+.form .task-button {
+  color: #41295a;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form .task-button:hover {
+  background: #41295a;
+  color: white;
+  transition: .5s ease;
+}
+
+/* *************************************************** TASK LIST ******************************************************************************************************************* */
+.task-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.task-list {
+  list-style: none;
+  min-width: 30%;
+}
+/* ***************************************************** TASK ***********************************************************************************************************************/
+.task {
+  margin: .5rem;
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all .5s ease;
+  box-shadow: 5px 5px 5px #000000;
+  ;
+}
+
+.task-item {
+    padding: 0rem .5rem;
+    display: flex;justify-content: center;align-items: center;
+    font-weight: 900;
+    color: #41295a;
+}
+
+.trash-btn {
+  background: #FF512F;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #DD2476, #FF512F);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-left: 4px solid #41295a;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+
+.fa-trash {
+    pointer-events: none;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+
+
