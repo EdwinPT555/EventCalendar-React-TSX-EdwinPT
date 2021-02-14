@@ -42,10 +42,21 @@ const App: React.FC = () => {
     setDt(new Date(dt.getFullYear(), mon, 1))
   }
 
-  // console.log(currDays);
+  const clearLocalStorage = () => {
+    localStorage.clear();
+  }
+
   return (
     <div className='container'>
       <Calendar prevMonth={prevMonth} year={year} nextMonth={nextMonth} months={months} currMonth={currMonth} prevDays={prevDays} currDays={currDays} mn={dt.getMonth()} />
+
+      <a href='' onClick={clearLocalStorage} className="float">
+        <i className="fa fa-trash my-float" aria-hidden="true"></i>
+      </a>
+      <div className="label-container">
+        <div className="label-text">Clear All Task</div>
+        <i className="fa fa-play label-arrow"></i>
+      </div>
     </div>
   )
 }

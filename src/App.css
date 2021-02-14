@@ -15,6 +15,66 @@
   justify-content: center;
   align-items: center;
 }
+
+
+.label-container{
+	position:fixed;
+	bottom:48px;
+	right:105px;
+	display:table;
+	visibility: hidden;
+}
+
+.label-text{
+	color:#FFF;
+	background:rgba(51,51,51,0.5);
+	display:table-cell;
+	vertical-align:middle;
+	padding:10px;
+	border-radius:3px;
+}
+
+.label-arrow{
+	display:table-cell;
+	vertical-align:middle;
+	color:#333;
+	opacity:0.5;
+}
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+  background-color: #6b0f1a;
+  background-image: linear-gradient(315deg, #6b0f1a 0%, #b91372 74%);
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+	box-shadow: 2px 2px 3px rgb(39, 36, 45);
+  cursor: pointer;
+}
+.float:hover{
+  background: linear-gradient(209.6deg, rgba(48, 207, 208, 1) 11.2%, rgba(51, 8, 103, 1) 92.5%);
+}
+
+.my-float{
+	font-size:24px;
+	margin-top:18px;
+}
+
+a.float + div.label-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s ease;
+}
+
+a.float:hover + div.label-container{
+  visibility: visible;
+  opacity: 1;
+}
+
 /* *************************************************** CALENDAR ****************************************************************************************************************************** */
 .calendar {
   width: 85rem;
@@ -128,7 +188,7 @@
 }
 
 .today:hover {
-  background: linear-gradient(209.6deg, rgba(48, 207, 208, 1) 11.2%, rgba(51, 8, 103, 1) 92.5%);
+  background: linear-gradient(209.6deg, #30cfd0 11.2%, rgba(51, 8, 103, 1) 92.5%);
 }
 
 #month{
@@ -224,7 +284,6 @@ header h2{
 
 .form .task-input::placeholder {
   font-size: 1.5rem;
-  text-align: center;
 }
 .form .task-input {
   max-width: 40rem;
@@ -298,10 +357,15 @@ background: linear-gradient(to right, #DD2476, #FF512F); /* W3C, IE 10+/ Edge, F
     font-size: 1rem;
 }
 
+.trash-btn:hover{
+  background: #DD2476;
+}
+
 
 .fa-trash {
     pointer-events: none;
 }
+
 
 .fall {
   transform: translateY(8rem) rotateZ(20deg);
